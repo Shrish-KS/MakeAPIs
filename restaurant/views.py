@@ -6,12 +6,12 @@ from rest_framework.renderers import TemplateHTMLRenderer
 from rest_framework.renderers import JSONRenderer
 from rest_framework.decorators import api_view, renderer_classes
 
-@renderer_classes([TemplateHTMLRenderer])
+@renderer_classes([JSONRenderer])
 class MenuItemsView(generics.ListCreateAPIView):
     queryset=MenuItem.objects.all()
     serializer_class=MenuItemSerializer
 
-@renderer_classes([TemplateHTMLRenderer])
+@renderer_classes([JSONRenderer])
 class SingleMenuItemView(generics.RetrieveUpdateAPIView,generics.DestroyAPIView):
     queryset=MenuItem.objects.all()
     serializer_class=MenuItemSerializer
